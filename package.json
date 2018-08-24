@@ -1,14 +1,70 @@
 {
-  "name": "gitbr",
-  "version": "1.0.0",
-  "description": "Command line utility for working with Git branches",
-  "main": "cli.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "chris.mason@code42.com",
-  "license": "ISC",
-  "bin": {
-    "gitbr": "./cli.js"
-  }
+	"name": "gitbr",
+	"version": "0.0.0",
+	"description": "Command line utility for working with Git branches",
+	"license": "MIT",
+	"repository": "crstffr/gitbr",
+	"author": {
+		"name": "Christopher Mason",
+		"email": "crstffr@yahoo.com",
+		"url": "github.com/crstffr/gitbr"
+	},
+	"bin": "cli.js",
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"cli.js",
+		"ui.js"
+	],
+	"keywords": [
+		""
+	],
+	"dependencies": {
+		"import-jsx": "^1.3.0",
+		"ink": "^0.5.0",
+		"ink-quicksearch": "^0.3.2",
+		"meow": "^5.0.0",
+		"prop-types": "^15.6.1",
+		"simple-git": "^1.96.0"
+	},
+	"devDependencies": {
+		"ava": "^0.25.0",
+		"babel-plugin-transform-react-jsx": "^6.24.1",
+		"eslint-config-xo-react": "^0.16.0",
+		"eslint-plugin-react": "^7.7.0",
+		"xo": "0.20.3"
+	},
+	"ava": {
+		"babel": {
+			"presets": [
+				"@ava/stage-4"
+			],
+			"plugins": [
+				[
+					"transform-react-jsx",
+					{
+						"pragma": "h",
+						"useBuiltIns": true
+					}
+				]
+			]
+		}
+	},
+	"xo": {
+		"extends": [
+			"xo-react"
+		],
+		"rules": {
+			"react/no-unused-prop-types": 1
+		},
+		"settings": {
+			"react": {
+				"pragma": "h"
+			}
+		}
+	}
 }
