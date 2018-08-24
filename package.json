@@ -1,0 +1,14 @@
+{
+  "name": "gitbr",
+  "version": "1.0.0",
+  "description": "Command line utility for working with Git branches",
+  "main": "cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "chris.mason@code42.com",
+  "license": "ISC",
+  "bin": {
+    "gitbr": "./cli.js"
+  }
+}
