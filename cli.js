@@ -1,10 +1,16 @@
 #!/usr/bin/env node
 
-const importJsx = require('import-jsx');
 const {h, render} = require('ink');
+const jsx = require('import-jsx');
+const Git = require('./lib/services/Git');
 
-const Entry = importJsx('./lib/entry');
+let args = process.argv.slice(2);
 
-console.log(process.argv.slice(2));
+if (args.length > 0) {
+  Git.call('branch', args);
+  process.exit();
+}
 
-// render(h(Entry));
+console.log('run gitbr');
+
+// render(h(jsx('./lib/entry')));
