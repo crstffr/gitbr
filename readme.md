@@ -5,5 +5,5 @@
 ## Install
 
 ```
-$ npm install --global gitbr
+$ npm install -g .
 ```
